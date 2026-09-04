@@ -1,0 +1,22 @@
+.dock-outer { position: fixed; left: 50%; bottom: 10px; z-index: 80; display: flex; align-items: flex-end; justify-content: center; width: min(460px, calc(100vw - 24px)); transform: translateX(-50%); pointer-events: none; }
+.dock-panel { position: absolute; bottom: 0; left: 50%; display: flex; align-items: flex-end; width: fit-content; max-width: 100%; gap: 9px; padding: 6px 9px; border: 2px solid var(--ink); border-radius: 18px 16px 20px 17px; background: rgba(242, 240, 232, .94); box-shadow: 4px 5px 0 var(--ink), 0 12px 30px rgba(41, 38, 34, .16); transform: translateX(-50%) rotate(-.25deg); backdrop-filter: blur(12px); pointer-events: auto; }
+.dock-item { position: relative; display: inline-flex; flex: 0 0 auto; align-items: center; justify-content: center; padding: 0; border: 1.5px solid var(--ink); border-radius: 13px 11px 14px 12px; color: var(--ink); background: var(--paper); box-shadow: 2px 2px 0 rgba(41, 38, 34, .22); cursor: pointer; outline: none; }
+.dock-item:hover, .dock-item:focus-visible { background: var(--sun); }
+.dock-item.is-active { background: var(--sun); box-shadow: inset 0 -4px 0 rgba(217,119,87,.28), 2px 2px 0 rgba(41,38,34,.22); }
+.dock-item:disabled { cursor: not-allowed; opacity: .48; filter: saturate(.42); }
+.dock-item:nth-child(2) { background: #e7efe2; }
+.dock-item:nth-child(5) { background: #f2d8cf; }
+.dock-icon { display: grid; place-items: center; width: 54%; height: 54%; }
+.dock-icon svg { width: 100%; height: 100%; overflow: visible; }
+.dock-icon path, .dock-icon circle, .dock-icon rect { vector-effect: non-scaling-stroke; }
+.dock-label { position: absolute; left: 50%; bottom: calc(100% + 11px); width: max-content; padding: 6px 8px; border: 1.5px solid var(--ink); border-radius: 7px; color: var(--ink); background: var(--paper); box-shadow: 2px 2px 0 var(--ink); font: 700 10px/1 var(--mono); transform: translateX(-50%); }
+@media (max-width: 520px) { .dock-panel { gap: 5px; padding-inline: 7px; } .dock-label { display: none; } }
+@media (prefers-reduced-motion: reduce) { .dock-item { width: 44px !important; height: 44px !important; } }
+
+.ticket-dock.dock-outer { position: static; bottom: auto; left: auto; width: 100%; height: auto !important; transform: none; }
+.ticket-dock .dock-panel { position: static; left: auto; width: 100%; justify-content: space-between; gap: 5px; padding: 5px; transform: none; box-shadow: 2px 3px 0 var(--ink); }
+.ticket-dock .dock-item { border-radius: 11px 9px 12px 10px; }
+.garden-screen-dock .dock-panel { background: rgba(242,240,232,.96); }
+.garden-nav-ticket .garden-screen-dock.dock-outer { position: static; left: auto; bottom: auto; width: 100%; height: auto !important; transform: none; pointer-events: none; }
+.garden-nav-ticket .garden-screen-dock .dock-panel { position: static; left: auto; width: 100%; justify-content: space-between; gap: 4px; padding: 6px; transform: none; box-shadow: 3px 4px 0 var(--ink); pointer-events: auto; }
+.garden-nav-ticket .garden-screen-dock .dock-item { border-radius: 11px 9px 12px 10px; }

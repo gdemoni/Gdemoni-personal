@@ -1,0 +1,40 @@
+# Dependencies and build output
+node_modules/
+dist/
+.vite/
+.cache/
+coverage/
+
+# Local environment and Cloudflare credentials/state
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+.wrangler/
+
+# Browser checks and local generated artifacts
+.playwright-cli/
+/output/
+playwright-report/
+test-results/
+*.log
+
+# Editor and operating system files
+.vscode/
+.idea/
+*.code-workspace
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# Private originals and local credentials: keep outside public/
+/private/
+/secrets/
+*.pem
+*.key
+*.p12
+*.pfx

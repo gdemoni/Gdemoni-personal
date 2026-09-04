@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+.variable-proximity { display: block; font-family: 'Roboto Flex', var(--body); font-variation-settings: 'wght' 560, 'opsz' 24; }
+.variable-word, .variable-letter { display: inline-block !important; white-space: nowrap; }
+.variable-letter { transform-origin: center bottom; will-change: transform, font-variation-settings; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+@media (prefers-reduced-motion: reduce) { .variable-letter { transform: none !important; } }

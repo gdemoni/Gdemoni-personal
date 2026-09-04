@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Gdemoni 的个人数字花园：一名大三学生的 AI 编程项目、文章笔记与大学成长经历。" />
+    <meta name="theme-color" content="#fbfaf5" />
+    <title>Gdemoni’s World · Digital Garden</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%23fbfaf5%22/><path d=%22M32 52V23M32 31C18 31 13 22 13 13c12 0 20 5 21 15M33 37c4-13 13-19 24-17-1 12-9 20-24 21%22 fill=%22none%22 stroke=%22%23496448%22 stroke-width=%225%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./marker-ui.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#garden">跳到主要内容</a>
+
+    <header class="topbar" aria-label="网站工具栏">
+      <a class="wordmark" href="#top" data-return-home aria-label="返回主界面">
+        <span class="wordmark-mark" aria-hidden="true">✦</span>
+        <span>Gdemoni’s world</span>
+      </a>
+    </header>
+
+    <main id="top">
+      <section class="entrance" aria-labelledby="entrance-title">
+        <div class="entrance-copy">
+          <h1 id="entrance-title" aria-label="Gdemoni personal world"><span class="hero-name-line"><span>Gdemoni</span><span class="hero-personal">personal</span></span><span class="title-accent">world</span></h1>
+        </div>
+
+        <aside class="seed-pass admission-ticket" aria-label="免费花园通行证">
+          <div class="ticket-main-paper">
+          <svg class="ticket-sketch-frame" viewBox="0 0 360 440" preserveAspectRatio="none" aria-hidden="true"><path class="ticket-paper-fill" d="M5 5Q92 2 181 5T355 5L356 440H4Z"/><path class="ticket-ink-line" d="M5 438Q3 327 5 220T5 5Q95 3 182 5T355 5Q353 108 356 222T355 438"/><path class="ticket-ink-echo" d="M12 8Q78 6 120 8M353 12L352 94M7 337L6 419"/></svg>
+          <div class="pass-head">
+            <h2>A ticket<br />to my<br /><span class="soft-ink">little world.</span></h2>
+          </div>
+          <div class="entrance-pass-directory" aria-label="Garden Pass 花园路线预览">
+            <p class="garden-ticket-label">Garden Pass</p>
+            <ol class="entrance-pass-routes">
+              <li><span>01</span><strong data-i18n="navAbout">园丁档案</strong><small>#about</small></li>
+              <li><span>02</span><strong data-i18n="navProjects">项目温室</strong><small>#projects</small></li>
+              <li><span>03</span><strong data-i18n="navSkills">工具棚</strong><small>#skills</small></li>
+              <li><span>04</span><strong data-i18n="navJourney">成长小径</strong><small>#journey</small></li>
+              <li><span>05</span><strong data-i18n="navContact">花园信箱</strong><small>#contact</small></li>
+              <li><span>06</span><strong data-i18n="navUpcoming">敬请期待</strong><small>#upcoming</small></li>
+            </ol>
+          </div>
+          <div class="ticket-offer">
+            <div class="ticket-price"><span class="ticket-was"><del aria-label="原价99美元">$99</del></span><strong aria-label="现价0美元"><sup>$</sup>0</strong></div>
+            <p class="ticket-free-note">不收门票，只收一点好奇心。</p>
+          </div>
+          </div>
+          <button class="enter-garden" type="button" aria-controls="garden" aria-expanded="false">
+            <svg class="ticket-sketch-frame" viewBox="0 0 360 143" preserveAspectRatio="none" aria-hidden="true"><path class="ticket-paper-fill" d="M4 0H355L356 138Q270 141 179 138T5 139Z"/><path class="ticket-ink-line" d="M4 0Q6 71 5 139Q90 137 179 139T356 138Q354 79 355 0"/><path class="ticket-ink-echo" d="M13 135L114 136M352 77L353 132"/></svg>
+            <span class="ticket-slice-hint" aria-hidden="true">
+              <span>Slice to enter</span>
+              <svg viewBox="0 0 62 42" focusable="false"><path d="M3 23Q12 21 20 23Q34 20 54 21M37 8Q44 14 56 20Q47 26 38 36"/><path class="hint-ink-overlap" d="M31 22L52 21M51 18L56 20L48 25"/></svg>
+            </span>
+            <span class="stub-cut" aria-hidden="true">✂</span>
+            <span class="ticket-action-label">Slice to enter</span>
+            <span class="stub-instruction">点击撕下票根 · 进入花园</span>
+            <span class="ticket-barcode" aria-hidden="true"></span>
+          </button>
+        </aside>
+      </section>
+
+      <div id="garden" class="garden" aria-live="polite" aria-hidden="true" inert>
+        <div class="garden-edge garden-edge-top" aria-hidden="true">
+          <span class="leaf leaf-a"></span><span class="leaf leaf-b"></span><span class="leaf leaf-c"></span>
+        </div>
+
+        <section class="garden-world-section reveal is-visible" aria-labelledby="about-title">
+          <div class="garden-world">
+            <div class="garden-storyboard">
+              <div class="garden-world-heading">
+                <p class="section-kicker" data-i18n="aboutKicker">THE GARDENER</p>
+                <h2 id="about-title">园丁档案</h2>
+                <button class="scene-language-switch" type="button" aria-label="切换到英文" title="中文 / English"><svg viewBox="0 0 48 42" aria-hidden="true"><path d="M7 8l22 2M18 4l-1 5M11 14c3 7 9 12 17 14M24 11c-2 8-8 15-18 20M29 34l8-20 9 21M32 28h11"/></svg></button>
+                <span class="language-sketch-hint">看不懂英文？点这里切换中英文<svg viewBox="0 0 100 45" aria-hidden="true"><path d="M3 32Q43 39 88 11M69 7L92 8 85 29" /></svg></span>
+              </div>
+              <div class="garden-content-window hand-border">
+                <article id="about" class="garden-panel garden-window-panel about-copy is-active" data-panel="about">
+                  <p class="lead" data-i18n="aboutLead">你好，我是 <mark>Gdemoni</mark>，就读于苏大下的某附属学院，软件工程专业，一名<mark>在校大三学生</mark>。</p>
+                  <p data-i18n="aboutIdentities">我的身份有点多：<strong>提示词工程师、Yes 工程师、报错翻译官、AI 监工、脑洞施工队长</strong>——以上属于玩梗，主要工作是对 AI 说「再改一下」。</p>
+                  <p data-i18n="aboutBodyA">目前还在不断学习、接触<mark>互联网</mark>，也在探索自己真正感兴趣、愿意长期投入的方向。平时会接触 AI、<mark>编程</mark>和各种新工具，脑海里也经常会冒出一些奇奇怪怪但很想实现的想法。</p>
+                  <p data-i18n="aboutBodyB">这个网站更像是我的一个小花园，也像是一场持续更新中的个人展览。这里会放一些我做过的项目、写过的文章，以及大学期间的一些成长经历。它们可能并不完美，但都真实记录了我在不同阶段做过什么、想过什么，又学到了什么。</p>
+                  <h3 data-i18n="growingTitle">这座花园正在生长：</h3>
+                  <ul class="garden-now-list">
+                    <li data-i18n="growingProjects"><strong>Coding Projects：</strong>我利用 AI 辅助做的有趣项目。</li>
+                    <li data-i18n="growingPath"><strong>Growth &amp; Experiences：</strong>大学期间的经历，包括<a class="experience-project-link" href="#projects">企业实践</a>、<a class="experience-project-link" href="#projects">项目参与</a>。</li>
+                    <li data-i18n="growingNotes"><strong>Articles &amp; Notes：</strong>关于 AI、编程和新工具的文章与笔记。</li>
+                  </ul>
+                  <p data-i18n="aboutExplore">在这个世界里，没有规定好的路线。你可以随意乱逛，点开一个项目，读一段经历，或者看看我最近在想些什么。希望你离开的时候，也能顺手带走一点灵感，继续完成属于你自己的创作。</p>
+                  <p data-i18n="aboutInvite">对我的 Coding 项目、<mark>AI、编程工具或各种新鲜事物</mark>感兴趣的话，欢迎参考、交流，也欢迎通过社交媒体来找我聊天。</p>
+                  <p class="personal-contact-links"><strong data-i18n="aboutFindMe">你可以在这里找到我：</strong><br><button type="button" data-show-wechat>微信 · 小张</button> / <a href="https://github.com/gdemoni" target="_blank" rel="noopener noreferrer">GitHub · gdemoni</a> / <a href="https://x.com/Gdemonizsh" target="_blank" rel="noopener noreferrer">X · @Gdemonizsh</a></p>
+                </article>
+
+                <article id="projects" class="garden-panel garden-window-panel" data-panel="projects" hidden>
+                  <div id="work-gallery" class="work-gallery"></div>
+                </article>
+
+                <article id="skills" class="garden-panel garden-window-panel" data-panel="skills" hidden>
+                  <div class="window-panel-heading"><p class="section-kicker" data-i18n="skillsKicker">TOOLS I ACTUALLY USE</p><h3 data-i18n="skillsTitle">工具棚</h3></div>
+                  <div class="shed">
+                    <div class="shed-group"><p data-i18n="skillDev">开发</p><ul><li data-i18n="skillPython">Python · 会使用</li><li data-i18n="skillTypeScript">TypeScript · 正在学习</li><li data-i18n="skillJava">Java · 正在学习</li><li data-i18n="skillGo">Go · 正在学习</li><li data-i18n="skillPrompt">提示词工程</li></ul></div>
+                    <div class="shed-group"><p data-i18n="skillDesign">设计</p><ul><li>Figma</li><li><a href="https://github.com/anthropics/claude-code/tree/main/plugins/frontend-design" target="_blank" rel="noopener noreferrer">Claude Code · frontend-design</a></li><li data-i18n="skillPrompt">提示词工程</li></ul></div>
+                    <div class="shed-group"><p data-i18n="skillTools">AI / 工具</p><ul><li>Codex</li><li>Cursor</li><li data-i18n="skillPrompt">提示词工程</li></ul><p data-i18n="skillExplored">国内外主流 AI 工具，基本都使用、体验过。</p></div>
+                  </div>
+                  <p data-i18n="skillInvite">对 <mark>Codex</mark> 感兴趣的朋友，也欢迎找我聊聊，很乐意交流！</p>
+                  <button type="button" class="skill-chat-link" data-open-contact data-i18n="skillChat">来聊聊 Codex ↗</button>
+                </article>
+
+                <article id="journey" class="garden-panel garden-window-panel" data-panel="journey" hidden>
+                  <div class="window-panel-heading"><p class="section-kicker" data-i18n="journeyKicker">GROWTH RINGS</p><h3 data-i18n="journeyTitle">成长小径</h3></div>
+                  <ol class="timeline">
+                    <li><time>NOW</time><div><h3 data-i18n="journeyNowTitle">在校大三学生</h3><p data-i18n="journeyNowBody">不断学习 AI、编程与互联网工具，把感兴趣的想法做成项目，探索愿意长期投入的方向。</p></div></li>
+                    <li><time>2026.05–09</time><div><h3 data-i18n="journeyWorkTitle">上海七牛信息技术有限公司</h3><p data-i18n="journeyWorkBody">产品架构部 · 产品架构实习生。担任五人小组组长，主导 Askio 运维排障 AI 助手整个项目的整体架构设计与技术选型，统筹系统分层、事件驱动协作、前后端 HTTP / SSE 接口合同，以及数据存储与异步任务设计；同时负责 Agent 核心实现，串联调查图、工具调用与经验检索复用链路。</p></div></li>
+                    <li class="education"><div><h3 data-i18n="journeyEduTitle">苏大下的某附属学院</h3><p data-i18n="journeyEduBody">软件工程专业</p></div></li>
+                  </ol>
+                </article>
+
+                <article id="contact" class="garden-panel garden-window-panel" data-panel="contact" hidden>
+                  <div class="window-panel-heading"><p class="section-kicker" data-i18n="contactKicker">LEAVE A NOTE</p><h3 data-i18n="contactTitle">花园信箱</h3></div>
+                  <div class="window-contact-layout">
+                    <div class="mailbox-copy"><p data-i18n="contactBody">有什么想法想分享，或想聊聊 AI、编程和有趣的项目？欢迎通过邮件或 X 给我留言。</p><div class="contact-links"><a href="mailto:zhang2718827630@gmail.com">zhang2718827630@gmail.com</a><a href="https://x.com/Gdemonizsh" target="_blank" rel="noopener noreferrer">X · @Gdemonizsh ↗</a><a href="https://github.com/gdemoni" target="_blank" rel="noreferrer">GitHub ↗</a></div></div>
+                    <div class="mailbox dimensional-mailbox">
+                      <button type="button" class="mailbox-toggle" aria-label="打开或合上信箱盖子" aria-pressed="false">
+                        <svg class="mailbox-volume" viewBox="0 0 300 370" aria-hidden="true">
+                          <ellipse cx="165" cy="341" rx="91" ry="12" fill="#242321" opacity=".1"/>
+                          <g stroke="#242321" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+                            <!-- A planted wooden post and its visible side give the box real height. -->
+                            <path d="M143 179L165 175 166 339 143 343Z" fill="#c6ab83"/>
+                            <path d="M165 175L177 182 177 332 166 339Z" fill="#90775b"/>
+                            <path d="M150 206L151 253M156 268L155 325M147 280L148 305" fill="none" stroke="#90775b" stroke-width="1.5"/>
+                            <path d="M110 190L219 167 220 178 112 203Z" fill="#90775b"/>
+                            <path d="M165 241L205 182 215 180 172 255Z" fill="#b59a72"/>
+                            <!-- Rounded roadside shell, drawn in three-quarter perspective. -->
+                            <path d="M84 68L199 43C231 37 260 60 261 91L262 159 140 190 139 117C139 86 116 64 84 68Z" fill="#91aa82"/>
+                            <path d="M145 117L254 90 255 153 145 181Z" fill="#78936f" stroke="none"/>
+                            <path d="M94 73L196 50C220 45 242 57 251 79" fill="none" stroke="#baceac" stroke-width="7"/>
+                            <path d="M35 187L35 119C33 54 137 48 141 115L141 190Z" fill="#394b39"/>
+                            <path d="M46 176L48 124Q49 83 86 81Q126 83 129 122L130 178Z" fill="#242f26" stroke-width="1.5"/>
+                            <path d="M53 152L109 139 126 164 67 179Z" fill="#fffdf4" stroke-width="2"/>
+                            <path d="M55 153L88 162 109 141" fill="none" stroke-width="1.5"/>
+                            <path d="M181 113L226 102 226 130 181 142Z" fill="#f7e59b" stroke-width="2"/>
+                            <path d="M243 113L242 36 270 32 270 56 245 60" fill="#d65f45"/>
+                            <circle cx="243" cy="113" r="4" fill="#fffdf4" stroke-width="2"/>
+                            <path d="M51 340Q95 336 131 342M181 340Q211 334 245 339" fill="none" stroke-width="1.5"/>
+                            <path d="M127 343Q123 328 116 324M129 342Q132 326 138 322M179 339Q183 320 191 317M184 339Q196 329 201 330" fill="none" stroke="#496448" stroke-width="2.5"/>
+                          </g>
+                          <text x="202" y="129" text-anchor="middle" fill="#242321" font-family="Caveat,cursive" font-size="20" transform="rotate(-14 202 125)">MAIL</text>
+                        </svg>
+                        <svg class="mailbox-hinged-lid" viewBox="0 0 114 132" aria-hidden="true"><path d="M4 126L4 61C2 -9 109 -9 109 59L110 129Z" fill="#baceac" stroke="#242321" stroke-width="3" stroke-linejoin="round"/><path d="M12 116L12 61C11 1 100 1 101 61L102 119Z" fill="none" stroke="#496448" stroke-width="1.5"/><path d="M20 48Q30 13 60 16" fill="none" stroke="#e0e9d6" stroke-width="5" stroke-linecap="round"/><path d="M43 86L70 86 70 94 43 94Z" fill="#496448" stroke="#242321" stroke-width="2"/><path d="M17 126L99 129" stroke="#242321" stroke-width="1" opacity=".5"/></svg>
+                      </button>
+                      <p class="mailbox-open-hint" data-i18n="mailboxOpenHint">轻轻掀开，投递一点想法。</p>
+                    </div>
+                  </div>
+                </article>
+                <article id="upcoming" class="garden-panel garden-window-panel" data-panel="upcoming" hidden>
+                  <div class="window-panel-heading"><p class="section-kicker" data-i18n="upcomingKicker">COMING SOON</p><h3 data-i18n="upcomingTitle">这座花园，还会继续生长。</h3></div>
+                  <p data-i18n="upcomingBody">个人博客和更多有趣的个人小网站正在计划中。未来会在这里分享我的文章、学习笔记，以及新的小创作。敬请期待！</p>
+                </article>
+              </div>
+            </div>
+            <aside class="garden-contact-rail" aria-label="平台联系方式">
+              <button type="button" class="wechat-contact" data-show-wechat aria-label="查看微信二维码" aria-describedby="wechat-qr-card">
+                <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 12c7-7 21-5 25 3 4 8-4 16-14 16l-6 4 1-6c-9-4-11-11-6-17Z"/><path d="M26 23c5-4 14-2 16 3 3 6-2 11-9 11l-4 3v-4c-5-2-7-8-3-13Z"/><circle cx="17" cy="20" r="1.5"/><circle cx="26" cy="20" r="1.5"/></svg>
+                <span id="wechat-qr-card" class="wechat-qr-card" role="tooltip"><strong>WeChat · 小张</strong><img src="/wechat-qr-current.jpg" alt="小张的个人微信二维码" width="888" height="1131"><small>扫码添加好友 · 点击查看大图</small></span>
+              </button>
+              <a href="https://x.com/Gdemonizsh" target="_blank" rel="noopener noreferrer" aria-label="访问 X：@Gdemonizsh">
+                <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 7l9 1 24 32-10-1L8 7ZM38 7 26 21M21 27 9 40"/></svg>
+                <span>X · @Gdemonizsh</span>
+              </a>
+              <a href="https://github.com/gdemoni" target="_blank" rel="noreferrer" aria-label="访问 Gdemoni 的 GitHub">
+                <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 7c-9 0-16 7-16 16 0 7 4 13 11 15v-5c-4 1-5-2-6-4-1-1-2-1-2-2 3 0 4 3 5 4 1 1 2 1 3 1 0-2 1-3 2-4-5-1-9-3-9-9 0-2 1-4 2-5 0-2 0-4 1-5 3 0 5 2 6 2 2-1 4-1 6-1s4 0 6 1c1 0 3-2 6-2 1 1 1 3 1 5 1 1 2 3 2 5 0 6-4 8-9 9 2 1 2 3 2 6v5c7-2 11-8 11-15 0-9-7-16-16-16Z"/></svg>
+                <span>GitHub · gdemoni</span>
+              </a>
+              <a href="mailto:zhang2718827630@gmail.com" aria-label="发送邮件至 zhang2718827630@gmail.com">
+                <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M5 11q18 2 38-1l-1 29-36-1L5 11Z"/><path d="m7 13 16 15q10-7 18-15"/></svg>
+                <span>zhang2718827630@gmail.com</span>
+              </a>
+              <button type="button" data-open-contact aria-label="可以留言，前往花园信箱">
+                <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 9C18 3 35 5 41 15s0 22-15 23l-11 5 1-7C3 33 1 18 9 9Z"/><circle cx="17" cy="21" r="1.5"/><circle cx="30" cy="20" r="1.5"/></svg>
+                <span>可以留言 · 点击进入花园信箱</span>
+              </button>
+              <button type="button" class="resume-contact" aria-label="简历预览，查看详细简历请联系我" aria-describedby="resume-preview">
+                <em class="resume-sketch-hint"><svg viewBox="0 0 80 42" aria-hidden="true"><path d="M75 28Q42 35 9 13M25 6L7 12 19 29" /></svg><b data-i18n="resumeInvite">对我感兴趣？<br>看看我的简历</b></em>
+                <svg class="resume-glyph" viewBox="0 0 48 48" aria-hidden="true">
+                  <path d="M10 5q12 1 22-1l8 9-1 30q-15-1-30 0L10 5ZM32 5l-1 10 9-2"/>
+                  <circle cx="20" cy="19" r="4"/><path d="M14 29q1-7 6-6t7 6M14 34l18-1M14 38l12 1"/>
+                </svg>
+                <span id="resume-preview" class="resume-preview" role="tooltip">
+                  <strong>My résumé</strong>
+                  <img src="/resume-preview-blurred.png" alt="已模糊处理的个人简历预览，详细简历请联系我" width="1074" height="1464" loading="lazy">
+                  <em>想要看具体的简历，请联系我。</em>
+                </span>
+              </button>
+            </aside>
+            <aside class="garden-nav-ticket" aria-label="花园通行门票与导航">
+              <svg class="ticket-sketch-frame" viewBox="0 0 360 700" preserveAspectRatio="none" aria-hidden="true"><path class="ticket-paper-fill" d="M5 5Q92 2 181 5T355 5L356 694Q260 697 179 694T5 695Z"/><path class="ticket-ink-line" d="M5 695Q3 520 5 350T5 5Q95 3 182 5T355 5Q353 180 356 350T356 694Q270 697 179 694T5 695"/><path class="ticket-ink-echo" d="M12 9Q78 6 120 8M352 12L352 130M8 522L7 670M13 690L115 692"/></svg>
+              <div class="garden-ticket-head">
+                <h3>A ticket<br />to my<br /><span>little world.</span></h3>
+              </div>
+              <p class="garden-ticket-label">Garden Pass</p>
+              <ol class="garden-ticket-routes">
+                <li><button type="button" data-ticket-target="about"><span>01</span><strong data-i18n="navAbout">园丁档案</strong><small>#about</small></button></li>
+                <li><button type="button" data-ticket-target="projects" aria-expanded="false" aria-controls="garden-work-directory"><span>02</span><strong data-i18n="navProjects">项目温室</strong><small>#projects ▾</small></button><ul id="garden-work-directory" class="garden-work-directory" hidden></ul></li>
+                <li><button type="button" data-ticket-target="skills"><span>03</span><strong data-i18n="navSkills">工具棚</strong><small>#skills</small></button></li>
+                <li><button type="button" data-ticket-target="journey"><span>04</span><strong data-i18n="navJourney">成长小径</strong><small>#journey</small></button></li>
+                <li><button type="button" data-ticket-target="contact"><span>05</span><strong data-i18n="navContact">花园信箱</strong><small>#contact</small></button></li>
+                <li><button type="button" data-ticket-target="upcoming"><span>06</span><strong data-i18n="navUpcoming">敬请期待</strong><small>#upcoming</small></button></li>
+              </ol>
+              <div class="garden-stamp-collection" aria-label="花园浏览纪念章">
+                <div class="garden-stamps"></div>
+                <p class="garden-path-progress" aria-live="polite">已集章 0 / 5</p>
+              </div>
+            </aside>
+          </div>
+          <div class="garden-foreground" id="garden-foreground" aria-label="可随鼠标摆动的花园草丛">
+            <nav class="garden-world-door" aria-label="花园区域导航">
+              <div class="door-arch">
+                <button class="door-arrow door-previous" type="button" aria-label="进入上一个花园区域" disabled>←</button>
+                <button class="door-arrow door-next active" type="button" aria-label="进入下一个花园区域">→</button>
+              </div>
+              <p class="door-route-label" aria-live="polite">01 / 05 · garden gate</p>
+            </nav>
+            <div class="garden-horizon" aria-hidden="true"></div>
+            <div class="walking-figure walker-one" aria-hidden="true"><span class="walker-bubble">Aha!</span><i></i><b></b><em></em></div>
+            <div class="walking-figure walker-two" aria-hidden="true"><span class="walker-bubble">Creative!</span><i></i><b></b><em></em></div>
+            <div class="walking-figure walker-three" aria-hidden="true"><span class="walker-bubble">Wait…</span><i></i><b></b><em></em></div>
+            <div class="garden-plant-bed" aria-hidden="true">
+              <span style="--x:-2%;--h:168px;--r:-18deg;--tone:#b4c9aa"></span><span style="--x:5%;--h:128px;--r:12deg;--tone:#90b184"></span><span style="--x:12%;--h:186px;--r:-10deg;--tone:#c8d69b"></span><span style="--x:20%;--h:116px;--r:16deg;--tone:#79a16f"></span><span style="--x:28%;--h:154px;--r:-16deg;--tone:#a9c29d"></span><span style="--x:36%;--h:132px;--r:8deg;--tone:#ccd59b"></span><span style="--x:45%;--h:194px;--r:-7deg;--tone:#83a879"></span><span style="--x:54%;--h:122px;--r:20deg;--tone:#a8c69b"></span><span style="--x:62%;--h:176px;--r:-17deg;--tone:#c5d394"></span><span style="--x:71%;--h:138px;--r:11deg;--tone:#78a06d"></span><span style="--x:79%;--h:190px;--r:-11deg;--tone:#afc8a4"></span><span style="--x:87%;--h:130px;--r:17deg;--tone:#c7d79d"></span><span style="--x:94%;--h:180px;--r:-7deg;--tone:#83aa77"></span>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span>GDEMONI · <span id="year"></span></span>
+      <span data-i18n="footerNote">用好奇心和代码培育</span>
+      <a href="#top" data-i18n="backTop">回到花园入口 ↑</a>
+    </footer>
+
+    <script type="module" src="./projects.js"></script>
+    <script type="module" src="./app.js"></script>
+    <script type="module" src="./src/enhancements.jsx"></script>
+    <dialog id="wechat-dialog" class="wechat-dialog" aria-labelledby="wechat-dialog-title">
+      <form method="dialog"><button class="wechat-dialog-close" aria-label="关闭微信二维码">×</button></form>
+      <h2 id="wechat-dialog-title">WeChat · 小张</h2>
+      <img src="/wechat-qr-current.jpg" alt="扫码添加小张为微信好友" width="888" height="1131">
+      <p>扫一扫，来聊聊你的想法。</p>
+    </dialog>
+  </body>
+</html>
