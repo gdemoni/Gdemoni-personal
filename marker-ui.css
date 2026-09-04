@@ -113,8 +113,10 @@ body.garden-open[data-garden-panel="projects"] .garden-content-window { border: 
 .garden-open .work-construction p { margin: 0; font: 700 clamp(22px,2.5vw,34px)/1.6 "ZCOOL KuaiLe",Kalam,sans-serif; }
 .askio-exhibit { height: 100%; overflow-y: auto; overscroll-behavior: contain; padding: clamp(12px,2vw,25px); color: var(--ink); background: #fcfcfa; font: 16px/1.5 "ZCOOL KuaiLe","Garden Notes",sans-serif; }
 .work-gallery.has-scrapbook { grid-template-columns: clamp(125px,14vw,180px) minmax(0,1fr); column-gap: 24px; padding-left: 8px; }
-.has-scrapbook > .askio-scrapbook { grid-column: 1; grid-row: 1; min-height: 0; overflow-y: auto; padding: 16px 8px 8px; }
-.has-scrapbook > .work-frame { grid-column: 2; grid-row: 1; }
+.work-spread { display: contents; }
+.work-swipe-hint { display: none; }
+.has-scrapbook > .work-spread > .askio-scrapbook { grid-column: 1; grid-row: 1; min-height: 0; overflow-y: auto; padding: 16px 8px 8px; }
+.has-scrapbook > .work-spread > .work-frame { grid-column: 2; grid-row: 1; }
 .has-scrapbook > .work-pagination { grid-column: 2; grid-row: 2; }
 .has-scrapbook > .work-note { bottom: 0; left: 12px; }
 .askio-contribution mark { color: inherit; background: linear-gradient(transparent 42%,#f7e59b 42%,#f7e59b 92%,transparent 92%); padding: 0 2px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
@@ -149,12 +151,15 @@ button.askio-photo-crop:focus-visible { outline: 3px dashed #496448; outline-off
 .askio-pain-points li { margin: 0 0 9px; line-height: 1.65; }
 .askio-pain-points strong { font-weight: 700; background: linear-gradient(transparent 58%,#f7e59b 58%,#f7e59b 92%,transparent 92%); }
 @media (max-width: 680px) {
- .work-gallery.has-scrapbook { grid-template-columns: minmax(0,1fr); grid-template-rows: 110px minmax(0,1fr) 52px; padding-left: 44px; gap: 8px; }
- .has-scrapbook > .askio-scrapbook { grid-column: 1; grid-row: 1; display: flex; gap: 18px; overflow: auto; }
- .has-scrapbook .askio-photo { flex: 0 0 100px; margin: 0; padding: 4px; }
+ .work-gallery.has-scrapbook { grid-template-columns: minmax(0,1fr); grid-template-rows: minmax(0,1fr) 20px 56px; padding-left: 44px; gap: 8px; }
+ .has-scrapbook > .work-spread { display: grid; grid-column: 1; grid-row: 1; grid-template-columns: 64% 100%; grid-template-rows: minmax(0,1fr); gap: 14px; min-width: 0; min-height: 0; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity; overscroll-behavior-x: contain; scroll-padding-inline: 6px; padding: 4px 6px 8px; -webkit-overflow-scrolling: touch; }
+ .has-scrapbook > .work-spread:focus-visible { outline: 2px dashed var(--deep); outline-offset: -2px; }
+ .has-scrapbook > .work-spread > .askio-scrapbook { grid-column: 1; grid-row: 1; display: flex; flex-direction: column; gap: 20px; overflow-x: hidden; overflow-y: auto; scroll-snap-align: start; padding: 16px 8px 8px; }
+ .has-scrapbook .askio-photo { flex: 0 0 auto; min-width: 0; margin: 0; padding: 6px; }
  .has-scrapbook .askio-photo-crop { aspect-ratio: 4 / 3; }
- .has-scrapbook .askio-photo figcaption { display: none; }
- .has-scrapbook > .work-frame { grid-column: 1; grid-row: 2; }
+ .has-scrapbook .askio-photo figcaption { display: block; font-size: 13px; }
+ .has-scrapbook > .work-spread > .work-frame { grid-column: 2; grid-row: 1; min-width: 0; scroll-snap-align: start; }
+ .has-scrapbook > .work-swipe-hint { display: block; grid-column: 1; grid-row: 2; margin: 0; text-align: center; color: var(--deep); font: 12px/20px "Garden Notes",sans-serif; }
  .has-scrapbook > .work-pagination { grid-column: 1; grid-row: 3; }
 }
 .garden-open .askio-exhibit .askio-role { margin: 14px 0 18px; font: inherit; line-height: 1.65; }

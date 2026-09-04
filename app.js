@@ -322,6 +322,7 @@ function renderGallery() {
   const zh = currentLanguage === "zh";
   root.classList.toggle("has-scrapbook", ["askio", "eduavatar", "travel-agent", "cloud-mail"].includes(work.id));
   root.innerHTML = `
+    <div class="work-spread" role="region" aria-label="${zh ? "项目图片与简介" : "Project photos and introduction"}" tabindex="0">
     ${work.id === "askio" ? renderAskioScrapbook(zh) : work.id === "eduavatar" ? renderEduAvatarScrapbook(zh) : work.id === "travel-agent" ? renderTravelScrapbook(zh) : work.id === "cloud-mail" ? renderCloudMailScrapbook(zh) : ""}
     <figure class="work-frame" style="--work-accent:${work.color}">
       ${work.id === "under-construction" ? `<div class="work-construction"><p>${work.summary[currentLanguage]}</p></div>` : work.id === "cloud-mail" ? renderCloudMailExhibit(zh) : work.id === "askio" ? renderAskioExhibit(zh) : work.id === "eduavatar" ? renderEduAvatarExhibit(zh) : work.id === "travel-agent" ? renderTravelExhibit(zh) : work.cover ? `<img src="${work.cover}" alt="${work.title[currentLanguage]}" />` : `
@@ -334,6 +335,8 @@ function renderGallery() {
         <small>${zh ? "布局示例 / 非真实作品" : "LAYOUT PLACEHOLDER / NOT A REAL PROJECT"}</small>
       </div>`}
     </figure>
+    </div>
+    <p class="work-swipe-hint">${zh ? "← 图片 · 左右滑动查看 · 简介 →" : "← Photos · Swipe to explore · Introduction →"}</p>
     <div class="work-note">
       <button type="button" class="work-note-trigger" aria-expanded="false" aria-controls="work-summary" aria-label="${zh ? "查看作品概要" : "Read work summary"}"><svg viewBox="0 0 48 56" aria-hidden="true"><path d="M5 4L42 3 44 51 4 53Z"/><path d="M13 16h20M13 25h23M13 33h17"/></svg><span>${zh ? "作品概要" : "Read note"}</span></button>
       <section class="work-summary" id="work-summary" hidden><p class="work-edition">WORK NOTE / 0${currentWork + 1}</p><h3>${work.title[currentLanguage]}</h3><p>${work.summary[currentLanguage]}</p></section>
