@@ -35,7 +35,7 @@ function GardenDock({ variant = 'ticket' }) {
     if (!document.body.classList.contains('garden-open')) return;
     window.dispatchEvent(new CustomEvent('garden-panel-request', { detail: { id } }));
   };
-  const items = useMemo(() => ['about', 'projects', 'skills', 'journey', 'contact'].map(id => ({ id, label: labels[id], icon: <GardenGlyph type={id} />, onClick: () => visit(id) })), [language]);
+  const items = useMemo(() => ['about', 'projects', 'journey', 'skills', 'contact'].map(id => ({ id, label: labels[id], icon: <GardenGlyph type={id} />, onClick: () => visit(id) })), [language]);
   const gatedItems = items.map(item => ({ ...item, className: activePanel === item.id ? 'is-active' : '', disabled: variant === 'ticket' || !isGardenOpen }));
   const className = variant === 'ticket' ? 'ticket-dock' : 'garden-screen-dock';
   const sizing = variant === 'garden'
