@@ -401,6 +401,7 @@ function setLanguage(language, ticket = language) {
   const stubInstruction = document.querySelector('.stub-instruction');
   if (stubInstruction) stubInstruction.textContent = language === 'zh' ? '点击撕下票根 · 进入花园' : 'Tear off your stub · enter the garden';
   syncTicketPaths();
+  syncDoorNavigation();
 }
 
 function renderProjects() {
@@ -602,8 +603,7 @@ function commitGardenPanel(id = "about", updateHistory = true) {
   const activeIndex = panelIds.indexOf(nextId);
   const doorRouteLabel = document.querySelector(".door-route-label");
   if (doorRouteLabel) doorRouteLabel.textContent = `${String(activeIndex + 1).padStart(2, "0")} / ${String(panelIds.length).padStart(2, "0")} · garden gate`;
-  if (previousDoorButton) previousDoorButton.disabled = activeIndex === 0;
-  if (nextDoorButton) nextDoorButton.disabled = activeIndex === panelIds.length - 1;
+  syncDoorNavigation();
   syncTicketPaths();
   if (updateHistory) history.replaceState(null, "", `#${nextId}`);
   window.dispatchEvent(new CustomEvent("garden-panel-change", { detail: { id: nextId } }));
@@ -702,11 +702,39 @@ ticketMotionPreference.addEventListener('change', resetGardenPass);
 window.addEventListener('resize', resetGardenPass);
 window.addEventListener('blur', resetGardenPass);
 window.addEventListener("garden-panel-request", (event) => activateGardenPanel(event.detail?.id));
+function projectDoorStep(direction) {
+  if (activeGardenPanel !== "projects") return false;
+  const nextWork = currentWork + direction;
+  if (nextWork < 0 || nextWork >= galleryWorks.length) return false;
+  currentWork = nextWork;
+  renderGallery();
+  document.querySelector("#projects")?.scrollTo({ top: 0, behavior: "instant" });
+  syncDoorNavigation();
+  return true;
+}
+
+function syncDoorNavigation() {
+  const panelIndex = panelIds.indexOf(activeGardenPanel);
+  const zh = currentLanguage === "zh";
+  const previousWork = activeGardenPanel === "projects" && currentWork > 0;
+  const nextWork = activeGardenPanel === "projects" && currentWork < galleryWorks.length - 1;
+  if (previousDoorButton) {
+    previousDoorButton.disabled = !previousWork && panelIndex <= 0;
+    previousDoorButton.setAttribute("aria-label", previousWork ? (zh ? "上一件作品" : "Previous work") : (zh ? "进入上一个花园区域" : "Previous garden area"));
+  }
+  if (nextDoorButton) {
+    nextDoorButton.disabled = !nextWork && panelIndex >= panelIds.length - 1;
+    nextDoorButton.setAttribute("aria-label", nextWork ? (zh ? "下一件作品" : "Next work") : (zh ? "进入下一个花园区域" : "Next garden area"));
+  }
+}
+
 previousDoorButton?.addEventListener("click", () => {
+  if (projectDoorStep(-1)) return;
   const currentIndex = panelIds.indexOf(activeGardenPanel);
   if (currentIndex > 0) activateGardenPanel(panelIds[currentIndex - 1]);
 });
 nextDoorButton?.addEventListener("click", () => {
+  if (projectDoorStep(1)) return;
   const currentIndex = panelIds.indexOf(activeGardenPanel);
   if (currentIndex < panelIds.length - 1) activateGardenPanel(panelIds[currentIndex + 1]);
 });
