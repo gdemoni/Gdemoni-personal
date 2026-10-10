@@ -207,12 +207,14 @@ button.askio-photo-crop:focus-visible { outline: 3px dashed #496448; outline-off
 .garden-open .work-note-trigger span { font: 700 15px/1.35 Caveat,"Garden Notes",cursive; letter-spacing: .02em; }
 .garden-open .timeline time { font: 700 24px/1 Caveat,cursive; }
 .timeline li.harvest::before { background: var(--sun); }
+.timeline li.harvest-lead { min-height: 0; padding-top: 8px; }
+.timeline li.harvest-lead::before { display: none; }
+body.garden-open #journey.garden-window-panel { overflow-y: auto; padding-bottom: 168px; }
 .path-intro { margin: 0 0 8px; line-height: 1.75; }
 .timeline .path-note-link { display: inline-block; margin-top: 8px; color: #b64235; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
 .garden-open .timeline .path-note-link { font: 700 18px/1.4 "ZCOOL KuaiLe", Kalam, sans-serif; }
 .timeline .path-note-link:hover, .timeline .path-note-link:focus-visible { color: var(--ink); }
 .path-footnote { margin: 8px 0 0; color: #6d7168; font: 13px/1.6 "Garden Notes", Kalam, sans-serif; }
-body.garden-open #journey.garden-window-panel { padding-bottom: 168px; }
 .garden-open .contact-links a { font: 18px/1.5 Kalam,"Garden Notes",cursive; color: var(--clay); text-underline-offset: 5px; }
 .garden-open .shed-group { padding: 14px; }
 .garden-open .shed-group p, .garden-open .shed-group li { font-family: "Garden Notes",Kalam,sans-serif; }
