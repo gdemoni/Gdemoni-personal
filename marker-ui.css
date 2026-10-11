@@ -211,14 +211,6 @@ button.askio-photo-crop:focus-visible { outline: 3px dashed #496448; outline-off
 .timeline li.harvest-lead::before { display: none; }
 .timeline li.harvest-lead h3 { margin-bottom: 4px; }
 .path-aside { margin: 0 0 12px; color: #8a8d84; font-size: 12px; line-height: 1.55; }
-.wechat-note-chapter { display: grid; grid-template-columns: 64px minmax(0, 1fr); column-gap: 12px; align-items: start; }
-.article-paper { grid-row: 1; width: 58px; transform: rotate(-3deg); }
-.article-paper svg { display: block; width: 48px; height: 56px; fill: var(--paper); stroke: var(--ink); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
-.article-paper svg path + path { stroke: var(--sage); stroke-width: 2.4; }
-.wechat-note-chapter > h3 { grid-column: 2; margin: 4px 0 0; font-size: 18px; line-height: 1.45; }
-.wechat-sections { grid-column: 2; }
-.wechat-sections h4 { margin: 14px 0 4px; font-size: 16px; line-height: 1.4; }
-.wechat-sections p { margin: 0; font-size: 15px; line-height: 1.7; }
 body.garden-open #journey.garden-window-panel { overflow-y: auto; padding-bottom: 168px; }
 .path-intro { margin: 0 0 8px; line-height: 1.75; }
 .timeline .path-note-link { display: inline-block; margin-top: 8px; color: #b64235; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; }
