@@ -31,6 +31,15 @@ const dictionary = {
     availability: "当前状态：开放交流与合作", sceneNote: "still growing...", projectsKicker: "OPEN-SOURCE PLANTS", projectsTitle: "项目温室",
     projectsIntro: "每个项目都从一个小问题开始。这里先放入四株示例植物，之后可替换为你的真实仓库。", skillDev: "开发", skillDesign: "设计", skillTools: "AI / 工具",
     skillsKicker: "TOOLS I ACTUALLY USE", skillsTitle: "工具棚", journeyKicker: "GROWTH RINGS", journeyTitle: "成长小径",
+    journeyHarvestTitle: "AI 开始变现：",
+    journeyHarvestAside: "感觉很多人对 AI 的需求还是挺大的。上班虽然赚得更多，但还是不希望被束缚，想多条路走走。",
+    journeyCase2Title: "最怕的是发错消息",
+    journeyCase2Body: "一位做 <mark>TikTok Shop 巴西站</mark>的跨境卖家，店里每天都要回差评、催达人。我做了一个替运营发送的工具。程序很快就能跑，真正难的是让它知道什么时候该停：窗口没对上人，就不要发；说不清发没发出去，就标成待核实。一次样品催拍停下来时，成功 25 条，被它自己拦下的有 27 条。客户转来定金，说「做的可以」。整单接近 <mark>1500 元</mark>。",
+    journeyCase2Link: "读这篇手记 ↗",
+    journeyCase1Title: "收到 1K+ 的那一刻",
+    journeyCase1Body: "对面是一位炒股的大哥。他说：<mark>「我了解市场，你了解 AI，AI 了解代码。」</mark>我第一次把 Codex、Claude，还有「聊天」和「能动手的助手」的差别，讲给一个陌生人听。两通很长的电话之后，他转来 <mark>1K+</mark>。收到的时候，手有点抖。",
+    journeyCase1Link: "读这篇手记 ↗",
+    journeyHarvestNote: "手记只记录个人经历，不构成投资建议。",
     journeyNowTitle: "在校大三学生", journeyNowBody: "不断学习 AI、编程与互联网工具，把感兴趣的想法做成项目，探索愿意长期投入的方向。",
     journeyWorkTitle: "上海七牛信息技术有限公司", journeyWorkBody: "产品架构部 · 产品架构实习生。担任五人小组组长，主导 Askio 运维排障 AI 助手整个项目的整体架构设计与技术选型，统筹系统分层、事件驱动协作、前后端 HTTP / SSE 接口合同，以及数据存储与异步任务设计；同时负责 Agent 核心实现，串联调查图、工具调用与经验检索复用链路。",
     journeyEduTitle: "苏大下的某附属学院", journeyEduBody: "软件工程专业", contactKicker: "LEAVE A NOTE", contactTitle: "花园信箱",
@@ -65,6 +74,15 @@ const dictionary = {
     availability: "Current status: open to conversations and collaborations", sceneNote: "still growing...", projectsKicker: "OPEN-SOURCE PLANTS", projectsTitle: "Project greenhouse",
     projectsIntro: "Every project starts with a small problem. These four plants are placeholders ready for your real repositories.", skillDev: "Development", skillDesign: "Design", skillTools: "AI / Tools",
     skillsKicker: "TOOLS I ACTUALLY USE", skillsTitle: "Tool shed", journeyKicker: "GROWTH RINGS", journeyTitle: "Growing path",
+    journeyHarvestTitle: "AI starts to pay:",
+    journeyHarvestAside: "A lot of people still seem to need help with AI. A job pays more, but I don't want to be tied down. I'd rather keep more than one path open.",
+    journeyCase2Title: "The scary part was sending the wrong message",
+    journeyCase2Body: "A cross-border seller on <mark>TikTok Shop Brazil</mark> spent every day answering bad reviews and nudging creators. I built a tool to send those messages for the shop. Getting it to run was the quick part. The hard part was teaching it when to stop: if the chat is not tied to the right person, do not send; if it cannot tell whether a message went out, mark it for a person to check. One sample follow-up paused at 25 sent, and 27 held back by the tool itself. The client sent a deposit and said the work was solid. The whole job came to about <mark>¥1,500</mark>.",
+    journeyCase2Link: "Read the note ↗",
+    journeyCase1Title: "The moment 1K+ landed",
+    journeyCase1Body: "He trades stocks. He put it this way: <mark>“I know the market, you know AI, and AI knows the code.”</mark> I walked a stranger through Codex, Claude, and how a chat differs from an assistant that can actually do the work. After two long calls he sent <mark>1K+</mark>. My hands shook a little.",
+    journeyCase1Link: "Read the note ↗",
+    journeyHarvestNote: "These notes record a personal experience. They are not investment advice.",
     journeyNowTitle: "Third-year university student", journeyNowBody: "Learning about AI, programming, and internet tools, turning ideas into projects, and exploring what I want to pursue for the long term.",
     journeyWorkTitle: "Qiniu · Shanghai", journeyWorkBody: "Product Architecture Department · Product Architecture Intern. Led a five-person team and the overall architecture and technology selection for Askio, an AI incident investigation assistant. Defined system layers, event-driven coordination, frontend–backend HTTP / SSE contracts, data storage, and asynchronous tasks. Also implemented the core Agent, connecting investigation graphs, tool calls, and experience retrieval and reuse.",
     journeyEduTitle: "An affiliated college of Soochow University", journeyEduBody: "Major in Software Engineering", contactKicker: "LEAVE A NOTE", contactTitle: "Garden mailbox",
@@ -451,7 +469,7 @@ document.querySelector(".mailbox-toggle")?.addEventListener("click", event => {
 });
 document.querySelector(".scene-language-switch")?.addEventListener("click", () => setLanguage(ticketLanguage !== currentLanguage ? "zh" : currentLanguage === "zh" ? "en" : "zh"));
 
-const panelIds = ["about", "projects", "skills", "journey", "contact", "upcoming"];
+const panelIds = ["about", "projects", "journey", "skills", "contact", "upcoming"];
 let activeGardenPanel = "about";
 // Browsing marks belong to this visit; reopening the ticket preserves them.
 const visitedGardenPaths = new Set();
@@ -507,7 +525,10 @@ function syncTicketPaths() {
         stampTray.append(stamp);
       }
       const name = document.querySelector(`[data-ticket-target="${id}"] strong`).textContent;
-      stamp.querySelector("span").textContent = (zh ? ["园丁", "作品", "工具", "成长", "来信", "期待"] : ["HELLO", "WORK", "TOOLS", "GROW", "MAIL", "SOON"])[index];
+      const stampWord = zh
+        ? { about: "园丁", projects: "作品", journey: "成长", skills: "工具", contact: "来信", upcoming: "期待" }
+        : { about: "HELLO", projects: "WORK", journey: "GROW", skills: "TOOLS", contact: "MAIL", upcoming: "SOON" };
+      stamp.querySelector("span").textContent = stampWord[id];
       stamp.setAttribute("aria-label", `${name} · ${zh ? "已盖章" : "Stamped"}`);
     });
   }
